@@ -16,4 +16,4 @@ jobs:
       - name: Run SSL expiry check script
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        run: bash ssl_expiry_check.sh
+        run: bash check_SSL_expiry.sh
