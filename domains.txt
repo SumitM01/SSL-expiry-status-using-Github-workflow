@@ -1,0 +1,6 @@
+google.com
+instagram.com
+linkedin.com
+amazon.com
+flipkart.com
+github.com
