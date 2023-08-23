@@ -16,7 +16,7 @@ while read -r domain; do
     expiry_date_seconds=$(date -d"$expiry_date" +%s)
     current_date_seconds=$(date +%s)
     remaining_days=$(( (expiry_date_seconds - current_date_seconds) / 86400 ))
-    message="SSL Expiry Alert\n* Domain : $domain\n* Warning : The SSL certificate for $domain will expire in $remaining_days days."
+    message="August 21 :: Task-1(Follow-up)\n SSL Expiry Alert\n* Domain : $domain\n* Warning : The SSL certificate for $domain will expire in $remaining_days days."
     echo $message
     send_slack_notification "$SLACK_WEBHOOK_URL" "$message"
 done < domains.txt
