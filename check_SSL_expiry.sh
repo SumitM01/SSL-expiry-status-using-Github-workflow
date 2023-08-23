@@ -11,8 +11,6 @@ get_ssl_expiry_date() {
     echo | openssl s_client -servername "$domain" -connect "$domain":443 2>/dev/null | openssl x509 -noout -dates | grep notAfter | cut -d= -f2
 }
 
-send_slack_notiication "$SLACK_WEBHOOK_URL" "Aug 21 - Task-1"
-
 while read -r domain; do
     expiry_date=$(get_ssl_expiry_date "$domain")
     expiry_date_seconds=$(date -d"$expiry_date" +%s)
